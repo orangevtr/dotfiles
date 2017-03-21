@@ -29,7 +29,7 @@ set -e
 
 install_dotfiles () {
     info 'install dotfiles'
-    for f in .aliases .bashrc .screenrc .vimrc .zshrc .shrc_common; do
+    for f in .aliases .bashrc .screenrc .vimrc .zshrc .shrc_common .gitconfig; do
         info "- $USERDIR/$f -> $DOTFILES_ROOT/$f"
         ln -sf $DOTFILES_ROOT/$f $USERDIR/$f
     done
