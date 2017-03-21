@@ -1,0 +1,31 @@
+[user]
+	name = Takayuki Hirayama
+	email = orangevtr@server.fake
+[color]
+	ui = auto
+	diff = auto
+	interactive = auto
+	status = auto
+	branch = auto
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	hist = log --pretty=format:\\\"%h %ad | %s%d [%an]\\\" --graph --date=short
+	st = status
+	ci = commit
+	co = checkout
+	w = whatchanged
+	b = branch
+	url = config --get remote.origin.url
+	graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
+[push]
+	default = tracking
+[core]
+	pager = LESSCHARSET=utf-8 less -FRSX
+	quotepath = false
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
