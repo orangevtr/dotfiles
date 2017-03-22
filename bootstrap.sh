@@ -23,8 +23,6 @@ cd $(dirname "$0")
 DOTFILES_ROOT=$(pwd -P)
 export USERDIR=${USERDIR:-$HOME}
 
-export LANG=en_US.UTF-8
-
 set -e
 
 install_dotfiles () {
