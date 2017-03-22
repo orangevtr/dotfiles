@@ -5,6 +5,9 @@
 # This is how one can set a reattach password:
 # password ODSJQf.4IJN7E    # "1234"
 
+defencoding utf8
+encoding utf8 utf8
+
 # no annoying audible bell, please
 vbell on
 
