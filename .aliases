@@ -10,7 +10,7 @@ if [ -f $USERDIR/.dir_colors ]; then
 fi
 # ls
 alias la='ls -avFGl'
-alias ls='ls -vFG'
+alias ls='ls -vFG --color'
 alias ll='ls -vFGl'
 # alias l.='ls -d .[a-zA-Z]* --color=always'
 
