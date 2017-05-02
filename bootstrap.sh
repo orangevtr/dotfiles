@@ -85,9 +85,23 @@ setup_anyenv () {
     success 'anyenv'
 }
 
+# parse options
+while getopts ":-:" opt; do
+    case "$opt" in
+        -)
+            case "${OPTARG}" in
+                with-anyenv)
+                    WITH_ANYENV=1
+                    ;;
+            esac
+            ;;
+    esac
+done
+
 install_dotfiles
 setup_vim_env
-setup_anyenv
+
+[ -n "$WITH_ANYENV" ] && [ "$WITH_ANYENV" -eq 1 ] && setup_anyenv
 
 echo ''
 echo 'bootstrap completed.'
