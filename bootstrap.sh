@@ -57,7 +57,9 @@ setup_vim_env () {
     info '- install packages with neobundle'
     # install packages with neobundle
     git clone https://github.com/Shougo/neobundle.vim $USERDIR/.vim/bundle/neobundle.vim
-    $USERDIR/.vim/bundle/neobundle.vim/bin/neoinstall
+    VIMRC=$USERDIR/.vimrc
+    vim -N -u $VIMRC -c "try | NeoBundleUpdate! $* | finally | qall! | endtry" \
+                -U NONE -i NONE -V1 -e -s
 
     success 'vim env'
 }
