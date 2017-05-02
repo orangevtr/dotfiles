@@ -24,6 +24,8 @@ export BASH_BIN=/bin/bash
 
 [ -r /etc/bash_completion.d/git ] && source /etc/bash_completion.d/git
 
+export ANYENV_ROOT=$USERDIR/.anyenv
+
 # Environmental Variables
 export EDITOR=/usr/bin/vim
 
