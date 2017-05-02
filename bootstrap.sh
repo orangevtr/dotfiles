@@ -75,12 +75,12 @@ setup_anyenv () {
     echo 'eval "$(anyenv init -)"' >> $USERDIR/.shrc_common
 
     info '- rbenv(Ruby)'
-    bash -l -c "anyenv install rbenv"
-    bash -l -c "rbenv install 2.4.0"
+    $BASH_BIN -l -c "anyenv install rbenv"
+    $BASH_BIN -l -c "rbenv install 2.4.0"
 
     info '- ndenv(node.js)'
-    bash -l -c "anyenv install ndenv"
-    bash -l -c "ndenv install v6.10.0"
+    $BASH_BIN -l -c "anyenv install ndenv"
+    $BASH_BIN -l -c "ndenv install v6.10.0"
 
     success 'anyenv'
 }
