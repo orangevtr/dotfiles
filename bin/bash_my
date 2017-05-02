@@ -1,0 +1,6 @@
+#!/bin/sh
+
+SHELL=/bin/bash
+USERDIR=${USERDIR:-$HOME}
+
+exec $SHELL --rcfile $USERDIR/.bashrc $*
