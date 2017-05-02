@@ -3,4 +3,4 @@
 SHELL=/bin/bash
 USERDIR=${USERDIR:-$HOME}
 
-exec $SHELL --rcfile $USERDIR/.bashrc $*
+exec $SHELL --rcfile $USERDIR/.bashrc "$@"
