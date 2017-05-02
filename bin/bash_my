@@ -1,0 +1,10 @@
+#!/bin/sh
+
+SHELL=/bin/bash
+USERDIR=${USERDIR:-$HOME}
+
+if [ -r "$USERDIR/.bashrc" ]; then
+    exec $SHELL --rcfile $USERDIR/.bashrc "$@"
+else
+    exec $SHELL "$@"
+fi

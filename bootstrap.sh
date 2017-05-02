@@ -57,7 +57,9 @@ setup_vim_env () {
     info '- install packages with neobundle'
     # install packages with neobundle
     git clone https://github.com/Shougo/neobundle.vim $USERDIR/.vim/bundle/neobundle.vim
-    $USERDIR/.vim/bundle/neobundle.vim/bin/neoinstall
+    VIMRC=$USERDIR/.vimrc
+    vim -N -u $VIMRC -c "try | NeoBundleUpdate! $* | finally | qall! | endtry" \
+                -U NONE -i NONE -V1 -e -s
 
     success 'vim env'
 }
@@ -73,19 +75,33 @@ setup_anyenv () {
     echo 'eval "$(anyenv init -)"' >> $USERDIR/.shrc_common
 
     info '- rbenv(Ruby)'
-    bash -l -c "anyenv install rbenv"
-    bash -l -c "rbenv install 2.4.0"
+    $BASH_BIN -l -c "anyenv install rbenv"
+    $BASH_BIN -l -c "rbenv install 2.4.0"
 
     info '- ndenv(node.js)'
-    bash -l -c "anyenv install ndenv"
-    bash -l -c "ndenv install v6.10.0"
+    $BASH_BIN -l -c "anyenv install ndenv"
+    $BASH_BIN -l -c "ndenv install v6.10.0"
 
     success 'anyenv'
 }
 
+# parse options
+while getopts ":-:" opt; do
+    case "$opt" in
+        -)
+            case "${OPTARG}" in
+                with-anyenv)
+                    WITH_ANYENV=1
+                    ;;
+            esac
+            ;;
+    esac
+done
+
 install_dotfiles
 setup_vim_env
-setup_anyenv
+
+[ -n "$WITH_ANYENV" ] && [ "$WITH_ANYENV" -eq 1 ] && setup_anyenv
 
 echo ''
 echo 'bootstrap completed.'

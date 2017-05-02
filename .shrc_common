@@ -19,7 +19,12 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 source $USERDIR/.aliases
 
+export BASH_BIN=/bin/bash
+[ -n "$DOTFILES_ROOT" ] && [ -x "$DOTFILES_ROOT/bin/bash_my" ] && BASH_BIN="$DOTFILES_ROOT/bin/bash_my"
+
 [ -r /etc/bash_completion.d/git ] && source /etc/bash_completion.d/git
+
+export ANYENV_ROOT=$USERDIR/.anyenv
 
 # Environmental Variables
 export EDITOR=/usr/bin/vim
@@ -40,4 +45,3 @@ fi
 
 # aws
 export AWS_REGION=ap-northeast-1
-

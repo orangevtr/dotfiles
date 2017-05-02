@@ -74,4 +74,4 @@ alias rmrbak='find . -name "*~" | xargs rm -fv'
 
 alias vim="vim -u $USERDIR/.vimrc"
 #alias git="GIT_CONFIG=$USERDIR/.gitconfig git"
-alias screen="screen -c $USERDIR/.screenrc"
+alias screen="screen -c $USERDIR/.screenrc -s $BASH_BIN"
