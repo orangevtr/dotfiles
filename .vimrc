@@ -254,7 +254,18 @@ set listchars=tab:\ \ ,extends:<,trail:\
 set laststatus=2
 set statusline=[%L]\ %t\ %y%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}%r%m%=%c:%l/%L
 
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set autoindent
+set smartindent
+
 filetype plugin on
+
+autocmd FileType ruby setlocal ts=2 sts=2 sw=2          " Ruby
+autocmd FileType coffee setlocal sw=2 sts=2 ts=2 et     " CoffeeScript
+autocmd FileType javascript setlocal sw=2 sts=2 ts=2 et " JavaScript
 
 noremap  
 noremap!  
