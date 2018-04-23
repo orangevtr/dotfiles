@@ -30,6 +30,7 @@ NeoBundle 'https://github.com/Shougo/unite-outline'
 NeoBundle 'https://github.com/Shougo/neocomplcache'
 NeoBundle 'https://github.com/hotchpotch/perldoc-vim'
 NeoBundle 'https://github.com/tpope/vim-fugitive'
+NeoBundle 'https://github.com/ngmy/vim-rubocop'
 
 " node.js開発用
 " http://qiita.com/hisayuki/items/b0d60168975d7cc8cbce
@@ -47,10 +48,11 @@ set statusline+=%#warningmsg# "エラーメッセージの書式
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_javascript_checkers = ['eslint'] "ESLintを使う
+let g:syntastic_ruby_checkers = ['rubocop'] "Rubocopを使う
 let g:syntastic_mode_map = {
       \ 'mode': 'active',
       \ 'active_filetypes': ['javascript'],
-      \ 'passive_filetypes': []
+      \ 'passive_filetypes': ['ruby']
       \ }
 
 " coffeescript用
