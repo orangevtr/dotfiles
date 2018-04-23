@@ -25,7 +25,8 @@ call neobundle#begin(expand($USERDIR.'/.vim/bundle'))
 " List plugins to be installed here..
 NeoBundle 'https://github.com/Shougo/neobundle.vim'
 NeoBundle 'https://github.com/Shougo/unite.vim'
-NeoBundle 'https://github.com/h1mesuke/unite-outline'
+NeoBundle 'https://github.com/Shougo/neomru.vim'
+NeoBundle 'https://github.com/Shougo/unite-outline'
 NeoBundle 'https://github.com/Shougo/neocomplcache'
 NeoBundle 'https://github.com/hotchpotch/perldoc-vim'
 NeoBundle 'https://github.com/tpope/vim-fugitive'
@@ -93,6 +94,7 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 " unite-online.vim
 "======================================================
 nmap <C-o> :Unite outline<CR>
+let g:unite_abbr_highlight = 'StatusLine'
 
 "======================================================
 " neocomplcache
