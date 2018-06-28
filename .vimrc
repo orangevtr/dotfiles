@@ -74,6 +74,9 @@ NeoBundle 'ekalinin/Dockerfile.vim'
 " Vue.js用
 NeoBundle 'posva/vim-vue'
 
+" PlantUML用
+NeoBundle "aklt/plantuml-syntax"
+
 call neobundle#end()
 
 " Enable again after listing plugins for NeoBundle.
