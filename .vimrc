@@ -54,6 +54,7 @@ let g:syntastic_mode_map = {
       \ 'active_filetypes': ['javascript'],
       \ 'passive_filetypes': ['ruby']
       \ }
+let g:syntastic_ruby_rubocop_exe = 'bundle exec rubocop'
 
 " coffeescript用
 NeoBundle 'kchmck/vim-coffee-script'
