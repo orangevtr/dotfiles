@@ -1,3 +1,5 @@
+export USERDIR=${USERDIR:-$HOME}
+
 [ -r $USERDIR/.shrc_common ] && source $USERDIR/.shrc_common
 
 # Lines configured by zsh-newuser-install
