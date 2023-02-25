@@ -41,25 +41,16 @@ install_dotfiles () {
 setup_vim_env () {
     info 'setup vim env'
 
-    info '- install plug.vim'
-    curl -fLo $USERDIR/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    VIMDIR=$USERDIR/.vim
+    if [ ! -d $VIMDIR ]; then
+      info "- mkdir $VIMDIR"
+      mkdir -p $VIMDIR
+    fi
 
-    info '- install and build vimproc before installing modules with neobundle'
-    # install vimproc before installing modules with neobundle
-    # c.f. https://github.com/Shougo/vimproc.vim#manual-install
-    git clone https://github.com/Shougo/vimproc.vim $USERDIR/.vim/bundle/vimproc.vim
-    cd $USERDIR/.vim/bundle/vimproc.vim && make
-    for d in autoload lib plugin; do
-        mkdir -p $USERDIR/.vim/$d
-        cp -pr $USERDIR/.vim/bundle/vimproc.vim/$d/* $USERDIR/.vim/$d
-    done
-
-    info '- install packages with neobundle'
-    # install packages with neobundle
-    git clone https://github.com/Shougo/neobundle.vim $USERDIR/.vim/bundle/neobundle.vim
-    VIMRC=$USERDIR/.vimrc
-    vim -N -u $VIMRC -c "try | NeoBundleUpdate! $* | finally | qall! | endtry" \
-                -U NONE -i NONE -V1 -e -s
+    if [ ! -d $VIMDIR/rc ]; then
+      info "- $VIMDIR/rc -> $DOTFILES_ROOT/.vimfiles/rc"
+      ln -sf $DOTFILES_ROOT/.vimfiles/rc $VIMDIR/rc
+    fi
 
     success 'vim env'
 }
