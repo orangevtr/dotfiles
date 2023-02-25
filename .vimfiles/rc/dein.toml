@@ -1,0 +1,24 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+hook_done_update = "runtime! rc/plugin-vim-fugitive.vim"
+
+# Enable those if prepared...
+
+## post neocomplcache.vim
+# [[plugins]]
+# repo = 'Shougo/ddc.vim'
+
+## post unite.vim
+# [[plugins]]
+# repo = 'Shougo/ddu.vim'
+
+## syntastic alternative
+# [[plugins]]
+# repo = 'dense-analysis/ale'
