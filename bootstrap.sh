@@ -47,6 +47,12 @@ setup_vim_env () {
       mkdir -p $VIMDIR
     fi
 
+    for vimf in $(ls -1 $DOTFILES_ROOT/.vimfiles/*.vim); do
+      f=$(basename $vimf)
+      info "- $VIMDIR/$f -> $vimf"
+      ln -sf $vimf $VIMDIR/$f
+    done
+
     if [ ! -d $VIMDIR/rc ]; then
       info "- $VIMDIR/rc -> $DOTFILES_ROOT/.vimfiles/rc"
       ln -sf $DOTFILES_ROOT/.vimfiles/rc $VIMDIR/rc
