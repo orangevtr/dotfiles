@@ -9,6 +9,9 @@ build = 'make'
 repo = 'tpope/vim-fugitive'
 hook_done_update = "runtime! rc/plugin-vim-fugitive.vim"
 
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+
 # Enable those if prepared...
 
 ## post neocomplcache.vim
