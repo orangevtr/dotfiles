@@ -12,11 +12,47 @@ hook_add = "runtime! rc/plugin-vim-fugitive.vim"
 [[plugins]]
 repo = 'vim-jp/vimdoc-ja'
 
-# Enable those if prepared...
+# LSP
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
 
-## post neocomplcache.vim
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
+depends = 'prabirshrestha/vim-lsp'
+
+[[plugins]]
+repo = 'vim-denops/denops.vim' # required: Deno
+
 # [[plugins]]
-# repo = 'Shougo/ddc.vim'
+# repo = 'vim-denops/denops-helloworld.vim'
+# depends = 'vim-denops/denops.vim'
+
+# ddc.vim, post neocomplcache
+[[plugins]]
+repo = 'Shougo/ddc-ui-native'
+
+# ddc sources
+[[plugins]]
+repo = 'Shougo/ddc-source-around'
+
+## [[plugins]]
+repo = 'shun/ddc-source-vim-lsp'
+depends = 'prabirshrestha/vim-lsp'
+
+# ddc matchers & filters
+[[plugins]]
+repo = 'Shougo/ddc-matcher_head'
+
+[[plugins]]
+repo = 'Shougo/ddc-sorter_rank'
+
+# main
+[[plugins]]
+repo = 'Shougo/ddc.vim'
+depends = ['denops.vim']
+hook_add = "runtime! rc/plugin-ddc.vim"
+
+# Enable those if prepared...
 
 ## post unite.vim
 # [[plugins]]
