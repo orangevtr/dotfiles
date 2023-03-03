@@ -7,7 +7,7 @@ build = 'make'
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
-hook_done_update = "runtime! rc/plugin-vim-fugitive.vim"
+hook_add = "runtime! rc/plugin-vim-fugitive.vim"
 
 [[plugins]]
 repo = 'vim-jp/vimdoc-ja'
