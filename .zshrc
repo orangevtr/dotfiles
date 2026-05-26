@@ -24,9 +24,7 @@ zstyle :compinstall filename '~/.zshrc'
 
 #---- プロンプト設定 ------#
 # 左プロンプト
-PROMPT='%b%{[32m%}[%n@%m %1~]${WINDOW:+"[$WINDOW]"}%#%b '
-# PROMPT='%B%{[34m%}[%n@%m %~]${WINDOW:+"[$WINDOW]"}%#%b '
-# PROMPT='%b[%n@%m %~]${WINDOW:+"[$WINDOW]"}%#%b '
+PROMPT='%b%F{green}[%n@%m %1~]${WINDOW:+"[$WINDOW]"}%#%f '
 
 ## <エスケープシーケンス>
 ## prompt_bang が有効な場合、!=現在の履歴イベント番号, !!='!' (リテラル)
@@ -66,7 +64,7 @@ PROMPT='%b%{[32m%}[%n@%m %1~]${WINDOW:+"[$WINDOW]"}%#%b '
 
 #PROMPT=ubst が必要
 # 右プロンプト
-RPROMPT='%{[34m%}%1v(%D %*)%{[m%}'
+RPROMPT='%F{blue}%1v(%D %*)%f'
 
 #---- その他特殊変数 -------#
 HISTFILE=$HOME/.zsh_history       # ヒストリ保存ファイル
