@@ -9,9 +9,17 @@ if [ -f $USERDIR/.dir_colors ]; then
    eval `dircolors -b $USERDIR/.dir_colors`
 fi
 # ls
-alias la='ls -avFGl'
-alias ls='ls -vFG'
-alias ll='ls -vFGl'
+if ls --color=auto &>/dev/null 2>&1; then
+  # GNU ls
+  alias la='ls --color=auto -avFl'
+  alias ls='ls --color=auto -vF'
+  alias ll='ls --color=auto -vFl'
+else
+  # BSD ls
+  alias la='ls -avFGl'
+  alias ls='ls -vFG'
+  alias ll='ls -vFGl'
+fi
 # alias l.='ls -d .[a-zA-Z]* --color=always'
 
 # # Perl Tips
