@@ -153,7 +153,7 @@ umask 022
 # key bindings
 #####################################################################
 # 端末設定
-stty    erase   '^H'        # Ctrl+H に 1 文字削除
+#stty    erase   '^H'        # Ctrl+H に 1 文字削除 # ^? にreplace
 stty    intr    '^C'        # Ctrl+C に割り込み
 stty    susp    '^Z'        # Ctrl+Z にサスペンド
 
