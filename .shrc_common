@@ -45,3 +45,8 @@ fi
 
 # aws
 export AWS_REGION=ap-northeast-1
+
+# Align erase with terminals that send DEL for Backspace.
+case $- in
+  *i*) stty erase '^?' 2>/dev/null ;;
+esac
